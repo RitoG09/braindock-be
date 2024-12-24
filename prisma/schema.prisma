@@ -25,7 +25,7 @@ model User{
   firstname   String
   lastname    String
   username    String   @unique
-  email       String
+  email       String   
   password    String
   contents    Content[]
   links       Link[]
