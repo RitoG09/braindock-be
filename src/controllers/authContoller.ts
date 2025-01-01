@@ -3,9 +3,9 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
-import { error } from "console";
 // import dotenv from "dotenv";
 // dotenv.config();
+// need to add zod further for validation
 
 const prisma = new PrismaClient();
 
@@ -77,7 +77,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export const logout = async (req: Request, res: Response) => {
+export const logout = async (req: Request, res: Response): Promise<void> => {
   try {
     res.status(400).json({
       message: "User logged out successfully.",
